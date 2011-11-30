@@ -1,5 +1,5 @@
 require "ponch/version"
-require 'ponch/railtie'
+require 'ponch/railtie' if defined?(Rails)
 
 module Ponch
   # Your code goes here...
