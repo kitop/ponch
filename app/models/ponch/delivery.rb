@@ -18,6 +18,14 @@ module Ponch
       self.save! unless opened?
     end
 
+    #class methods
+    def self.create_from_mail(mail)
+      self.create!  to: mail.to.first,
+                    from: mail.from.first,
+                    subject: mail.subject,
+                    sent_at: Time.now
+    end
+
     private
     def generate_code
       self.code = loop do
