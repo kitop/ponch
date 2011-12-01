@@ -1,6 +1,15 @@
 require "ponch/version"
-require 'ponch/engine' if defined?(Rails)
+require 'ponch/config'
+require 'ponch/engine'
 
 module Ponch
-  # Your code goes here...
+
+  class << self
+    def config
+      @config ||= Ponch::Config.new
+      yield(@config) if block_given?
+      @config
+    end
+  end
+
 end

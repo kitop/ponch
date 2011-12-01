@@ -12,7 +12,7 @@ module Ponch
         html_doc = Nokogiri::HTML(message_body)
 
         #TODO add host
-        pixel_url = Rails.application.routes.url_helpers.ponch_pixel_url(delivery.code)#, Ponch::Configuration.url_options)
+        pixel_url = Rails.application.routes.url_helpers.ponch_pixel_url(delivery.code, Ponch.config.url_options)
         tracking_pixel = "<img src=\"#{pixel_url}\" />"
         html_doc.at("body").add_child(tracking_pixel)
 
@@ -30,7 +30,7 @@ module Ponch
         message.text_part do
           content_type "text/plain; charset=utf-8"
           #this is a hack for fixing new lines
-          body existing_text_part || html_doc.textn.squeeze.strip.gsub("\n", "\r\n")
+          body existing_text_part || html_doc.text.squeeze.strip.gsub("\n", "\r\n")
         end
 
       end
