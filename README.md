@@ -15,10 +15,10 @@ It works by inserting an 1x1 tracking gif on your html emails and adding a contr
 Simply add in your Gemfile
 
 ``` ruby
-gem 'carrierwave'
+gem 'ponch'
 ```
 
-and then set in your environment.rb
+and then set in your config/environment.rb (or in each environment file) the details for 
 
 ``` ruby
 config.ponch.url_options = {host: "localhost", port: 3000}
