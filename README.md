@@ -37,3 +37,6 @@ And then Ponch takes care of the rest for you!
    bump version in a commit by itself I can ignore when I pull)
 * Send me a pull request. Bonus points for topic branches.
 
+## Licence
+
+Ponch is released under the MIT license.
