@@ -9,13 +9,15 @@ module Ponch
     before_create :generate_code
 
     def opened?
-      !!opened_at.nil?
+      !opened_at.nil?
     end
 
     def open!(ip_address = nil)
-      self.opened_at = Time.now
-      self.opened_ip = ip_address
-      self.save! unless opened?
+      unless opened?
+        self.opened_at = Time.now
+        self.opened_ip = ip_address
+        self.save! 
+      end
     end
 
     #class methods
