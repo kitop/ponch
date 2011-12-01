@@ -4,9 +4,9 @@ require File.expand_path('../lib/ponch/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["Esteban Pastorino"]
   gem.email         = ["ejpastorino@gmail.com"]
-  gem.description   = "Mail analytics"
-  gem.summary       = "Mail analytics"
-  gem.homepage      = ""
+  gem.description   = "Ponch lets you track opened emails if you're using your own sendmail server or Amazon SES. Only works on Rails 3.x. It works by inserting an 1x1 tracking gif on your html emails and adding a controller that handles the request to that image."
+  gem.summary       = "Simple email analytics for your Rails app"
+  gem.homepage      = "https://github.com/kitop/ponch"
 
   gem.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   gem.files         = `git ls-files`.split("\n")
