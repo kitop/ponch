@@ -6,7 +6,7 @@ class CreatePonchDeliveries < ActiveRecord::Migration
       t.string   :from,         :null => false
       t.string   :subject
 
-      t.string   :code,         :null => false, unique: true
+      t.string   :code,         :null => false
       t.datetime :sent_at,      :null => false
 
       t.datetime :opened_at

@@ -4,8 +4,10 @@ require "rails/generators/migration"
 module Ponch
   module Generators
 
-    class PonchGenerator < Rails::Generators::Base
+    class DeliveriesGenerator < Rails::Generators::Base
       include Rails::Generators::Migration
+
+      desc "Creates a base migration for Ponch::Delivery model"
 
       source_root File.expand_path('../templates', __FILE__)
 
