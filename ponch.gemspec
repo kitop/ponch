@@ -16,4 +16,5 @@ Gem::Specification.new do |gem|
   gem.version       = Ponch::VERSION
 
   gem.add_dependency 'railties', ['>= 3.0.0']
+  gem.add_dependency 'nokogiri', ['>= 1.4.7']
 end
