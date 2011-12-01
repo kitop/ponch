@@ -1,5 +1,5 @@
 module Ponch
-  class Railtie < ::Rails::Railtie #:nodoc:
+  class Engine < ::Rails::Engine#:nodoc:
     #action mailer register_interceptor
   end
 end
