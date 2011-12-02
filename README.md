@@ -40,3 +40,5 @@ And then Ponch takes care of the rest for you!
 ## Licence
 
 Ponch is released under the MIT license.
+
+![Ponch](/ponch.jpg)
