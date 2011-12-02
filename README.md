@@ -41,4 +41,4 @@ And then Ponch takes care of the rest for you!
 
 Ponch is released under the MIT license.
 
-![Ponch](/ponch.jpg)
+![Ponch](https://github.com/kitop/ponch/raw/master/ponch.jpg)
