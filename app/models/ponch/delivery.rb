@@ -1,6 +1,6 @@
 module Ponch
   class Delivery < ActiveRecord::Base
-    set_table_name :ponch_deliveries
+    self.table_name = "ponch_deliveries"
 
     validates_presence_of :to, :from, :sent_at
 
