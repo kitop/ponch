@@ -1,4 +1,5 @@
 require 'ponch/interceptor'
+require 'ponch/middleware'
 
 module Ponch
   class Engine < ::Rails::Engine#:nodoc:
@@ -9,6 +10,10 @@ module Ponch
       Ponch::Engine.config.ponch.each do |key, value|
         Ponch.config.send "#{key}=".to_sym, value
       end
+    end
+
+    initializer "ponch.add_middleware" do |app|
+      app.middleware.use Ponch::Middleware
     end
 
     #action mailer register_interceptor

@@ -12,11 +12,24 @@ module Ponch
       !opened_at.nil?
     end
 
-    def open!(ip_address = nil)
+    def clicked?
+      !clicked_at.nil?
+    end
+
+    def open!(ip_address = nil, do_save = true)
       unless opened?
         self.opened_at = Time.now
         self.opened_ip = ip_address
-        self.save! 
+        self.save! if do_save
+      end
+    end
+
+    def open_and_click!(ip_address = nil)
+      open!(ip_address, false)
+      unless clicked?
+        self.clicked_at = Time.now
+        self.clicked_ip = ip_address
+        self.save!
       end
     end
 

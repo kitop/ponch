@@ -11,6 +11,16 @@ module Ponch
 
         html_doc = Nokogiri::HTML(message_body)
 
+        #intercept_links
+        html_doc.search("a[href*='#{Ponch.config.url_options[:host]}']").each do |link|
+          href = link.attr("href")
+          uri = URI.parse(href)
+          query = Rack::Utils.parse_nested_query uri.query
+          query[:ponch] = delivery.code
+          uri.query = query.to_query
+          link.attributes["href"].value = uri.to_s
+        end
+
         pixel_url = Rails.application.routes.url_helpers.ponch_pixel_url(delivery.code, Ponch.config.url_options)
         tracking_pixel = "<img src=\"#{pixel_url}\" />"
         html_doc.at("body").add_child(tracking_pixel)
