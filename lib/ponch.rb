@@ -1,5 +1,6 @@
 require "ponch/version"
 require 'ponch/config'
+require 'ponch/helpers'
 require 'ponch/engine' if defined? Rails
 
 module Ponch

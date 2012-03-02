@@ -21,7 +21,7 @@ module Ponch
           link.attributes["href"].value = uri.to_s
         end
 
-        pixel_url = Rails.application.routes.url_helpers.ponch_pixel_url(delivery.code, Ponch.config.url_options)
+        pixel_url = Ponch::Helpers.url_for delivery.code
         tracking_pixel = "<img src=\"#{pixel_url}\" />"
         html_doc.at("body").add_child(tracking_pixel)
 

@@ -16,6 +16,8 @@ rdoc
 spec/reports
 test/tmp
 test/version_tmp
+test/dummy/db
+test/dummy/log
 tmp
 log
 *.log
